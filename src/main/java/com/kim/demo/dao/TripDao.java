@@ -23,16 +23,14 @@ public interface TripDao {
 
 	@Select("""
 			SELECT t.id
-			, t.regDate
-			, t.updateDate
+			, DATE_FORMAT(t.regDate, "%Y-%m-%d") AS regDate
+			, DATE_FORMAT(t.updateDate, "%Y-%m-%d") AS updateDate
 			, t.memberId
 			, t.boardId
-			, t.trip_start_time AS tripStartTime
-			, t.trip_end_time AS tripEndTime
 			, t.province_city AS provinceCity
 			, t.place_name AS placeName
 			, t.price
-			, t.description
+			, t.`body`
 			, b.name AS boardName
 			, m.nickname AS nickname
 			FROM trip t

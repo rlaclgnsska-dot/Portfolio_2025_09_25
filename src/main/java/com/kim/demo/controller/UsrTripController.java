@@ -58,6 +58,7 @@ public class UsrTripController {
 		if (endPage > pagesCnt) {
 			endPage = pagesCnt;
 		}
+		
 
 		model.addAttribute("trips", trips);
 		model.addAttribute("getTripsCnt", getTripsCnt);

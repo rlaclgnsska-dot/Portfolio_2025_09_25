@@ -64,8 +64,8 @@
 									<td>${trip.id }</td>
 									<td>${trip.boardName }</td>
 									<td>${trip.provinceCity }</td>
-									<td class="hover:underline"><a href="detail?id=${trip.id }">
-											${trip.placeName } </a></td>
+									<td class="hover:underline">
+										<a href="detail?id=${trip.id }">${trip.placeName } </a></td>
 									<td>${trip.price }</td>
 									<td>${trip.nickname }</td>
 									<td>${trip.regDate }</td>

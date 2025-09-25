@@ -70,7 +70,7 @@ public class Util {
 	    }
 	    try {
 	        LocalDateTime dateTime = LocalDateTime.parse(datetimeLocal);
-	        return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+	        return dateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 	    } catch (Exception e) {
 	        System.out.println("날짜 형식 변환 오류: " + datetimeLocal);
 	        return null;

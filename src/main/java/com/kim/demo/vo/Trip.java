@@ -1,20 +1,20 @@
 package com.kim.demo.vo;
 
-import ch.qos.logback.core.joran.spi.NoAutoStart;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoAutoStart
+@Data                   
+@NoArgsConstructor      
+@AllArgsConstructor 
 public class Trip {
 	private int id;
 	private String regDate;
 	private String updateDate;
 	private int memberId;
 	private int boardId;
-	private String tripStartTime;
-	private String tripEndTime;
+	private int trip_start_time;
+	private int trip_end_time;
 	private String provinceCity;
 	private String placeName;
 	private int price;
