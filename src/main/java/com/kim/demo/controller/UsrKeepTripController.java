@@ -99,7 +99,7 @@ public class UsrKeepTripController {
 		
 	    KeepTripService.doKeepTripDelete(duplicated, loginedMemberId);
 	    
-		return Util.jsReplace(Util.f("선택한 여행지를 삭제했습니다", loginedMemberId), "list");
+		return Util.jsReplace(Util.f("선택한 여행지를 삭제했습니다", loginedMemberId), "usr/keepTrip/list");
 	}
 	
 }

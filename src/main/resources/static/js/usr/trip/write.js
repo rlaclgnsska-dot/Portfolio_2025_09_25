@@ -67,7 +67,6 @@ const writeForm_onSubmit = function(form) {
 	
     // 기존 검증 로직
     form.placeName.value = form.placeName.value.trim(); // valaue -> value 오타 수정
-    form.tripStartTime.value = form.tripStartTime.value.trim(); 
     
     // 지역 선택 검증 추가
     const selectedProvince = document.querySelector('input[name="province"]:checked');

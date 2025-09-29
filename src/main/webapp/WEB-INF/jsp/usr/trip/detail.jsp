@@ -49,7 +49,7 @@
 					</tr>
 					<tr>
 						<th>비고</th>
-						<td>${trip.description }</td>
+						<td>${trip.body }</td>
 					</tr>
 				</table>
 			</div>

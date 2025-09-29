@@ -61,7 +61,17 @@ public interface TripDao {
 	int getLastInsertId();
 
 	@Select("""
-			SELECT *
+			SELECT t.id
+			, DATE_FORMAT(t.regDate, "%Y-%m-%d") AS regDate
+			, DATE_FORMAT(t.updateDate, "%Y-%m-%d") AS updateDate
+			, t.memberId
+			, t.boardId
+			, t.province_city AS provinceCity
+			, t.place_name AS placeName
+			, t.price
+			, t.`body`
+			, b.name AS boardName
+			, m.nickname AS nickname
 			FROM trip t
 			INNER JOIN trip_board b
 			ON t.boardId = b.id

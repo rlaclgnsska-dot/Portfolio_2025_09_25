@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+
+/* 태그 스타일 */
+.category-section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.category-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    min-width: 80px;
+}
+
+.category-section > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    padding: 6px 16px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.tag:hover {
+    border-color: #4CAF50;
+    color: #4CAF50;
+}
+
+.tag.selected-all,
+.tag.active {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+    color: white;
+}
+
+/* 테이블 스타일 */
+.table-box-type {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.table-box-type table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.table-box-type thead th {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+    padding: 16px 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    position: relative;
+}
+
+.table-box-type thead th:first-child {
+    border-top-left-radius: 8px;
+}
+
+.table-box-type thead th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.table-box-type tbody td {
+    padding: 14px 12px;
+    text-align: center;
+    border-bottom: 1px solid #f1f3f4;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.table-box-type tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.01);
+}
+
+.table-box-type tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* 번호 열 스타일 */
+.table-box-type tbody td:first-child {
+    font-weight: 600;
+    color: #666;
+    background-color: #fafafa;
+}
+
+/* 종류 열 스타일 */
+.table-box-type tbody td:nth-child(2) {
+    font-weight: 500;
+}
+
+/* 가격 열 스타일 */
+.table-box-type tbody td:nth-child(5) {
+    font-weight: 600;
+    color: #e74c3c;
+}
+
+/* 상호명 링크 스타일 */
+.table-box-type tbody td a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.table-box-type tbody td a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* 작성일 스타일 */
+.table-box-type tbody td:last-child {
+    color: #7f8c8d;
+    font-size: 13px;
+}
+
+/* 헤더 영역 스타일 */
+.flex.container.md-2 {
+    padding: 15px 0;
+    margin-bottom: 10px;
+}
+
+.flex.container.md-2 span {
+    font-weight: 500;
+    color: #555;
+}
+
+/* 새 글 작성 버튼 스타일 개선 */
+.btn.btn-outline.btn-sm {
+    background: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.btn.btn-outline.btn-sm:hover {
+    background: #45a049;
+    border-color: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+/* 반응형 테이블 */
+@media (max-width: 768px) {
+    .table-box-type {
+        font-size: 12px;
+    }
+    
+    .table-box-type thead th,
+    .table-box-type tbody td {
+        padding: 8px 6px;
+    }
+    
+    .category-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .category-label {
+        min-width: auto;
+    }
+}
