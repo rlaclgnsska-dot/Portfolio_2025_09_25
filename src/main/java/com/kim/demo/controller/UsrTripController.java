@@ -36,7 +36,7 @@ public class UsrTripController {
 	List<Trip> trips;
 
 	@RequestMapping("/usr/trip/list")
-	public String list(Model model, @RequestParam(defaultValue = "1") int page) {
+	public String list(Model model, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "0") int boardId) {
 
 		if (page <= 0) {
 			return rq.jsReturnOnView("페이지 번호가 올바르지 않습니다");
@@ -47,7 +47,7 @@ public class UsrTripController {
 		int limitStart = (page - 1) * itemsInApage;
 		int pagesCnt = (int) Math.ceil(((double) getTripsCnt / itemsInApage));
 
-		List<Trip> trips = tripService.getTrips(limitStart, itemsInApage);
+		List<Trip> trips = tripService.getTrips(limitStart, itemsInApage, boardId);
 
 		int pageGroupSize = 10;
 		int currentPageGroup = (page - 1) / pageGroupSize;

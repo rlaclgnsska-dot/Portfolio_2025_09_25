@@ -9,8 +9,7 @@
 	<link rel="stylesheet" href="/resource/trip/list.css" />
 	
 	<script src="${pageContext.request.contextPath}/js/usr/trip/list.js"></script>
-	
-	
+
 	<section class="mt-8 text-xl">
 	    <div class="container mx-auto px-3">
 	        
@@ -20,11 +19,11 @@
 	                <span>종류별</span>
 	            </div>
 	            <div>
-	                <span class="tag selected-all" data-category="종류별" data-value="전체">전체</span>
-	                <span class="tag" data-category="종류별" data-value="숙소">숙소</span>
-	                <span class="tag" data-category="종류별" data-value="음식점">음식점</span>
-	                <span class="tag" data-category="종류별" data-value="카페">카페</span>
-	                <span class="tag" data-category="종류별" data-value="가볼만한곳">가볼만한곳</span>
+					<a href="?boardId=0" class="tag" data-category="종류별" data-value="0">전체</a>
+					<a href="?boardId=1" class="tag" data-category="종류별" data-value="1">숙소</a>
+					<a href="?boardId=2" class="tag" data-category="종류별" data-value="2">카페</a>
+					<a href="?boardId=3" class="tag" data-category="종류별" data-value="3">음식점</a>
+					<a href="?boardId=4" class="tag" data-category="종류별" data-value="4">가볼만한곳</a>
 	            </div>
 	        </div>
 	        

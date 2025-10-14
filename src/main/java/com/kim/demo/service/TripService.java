@@ -20,8 +20,8 @@ public class TripService {
 		return tripDao.getTripsCnt();
 	}
 
-	public List<Trip> getTrips(int limitStart, int itemsInApage) {
-		return tripDao.getTrips(limitStart, itemsInApage);
+	public List<Trip> getTrips(int limitStart, int itemsInApage, int boardId) {
+		return tripDao.getTrips(limitStart, itemsInApage, boardId);
 	}
 
 

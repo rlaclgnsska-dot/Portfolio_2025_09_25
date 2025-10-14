@@ -22,27 +22,33 @@ public interface TripDao {
 	int getTripsCnt();
 
 	@Select("""
-			SELECT t.id
-			, DATE_FORMAT(t.regDate, "%Y-%m-%d") AS regDate
-			, DATE_FORMAT(t.updateDate, "%Y-%m-%d") AS updateDate
-			, t.memberId
-			, t.boardId
-			, t.province_city AS provinceCity
-			, t.place_name AS placeName
-			, t.price
-			, t.`body`
-			, b.name AS boardName
-			, m.nickname AS nickname
-			FROM trip t
-			INNER JOIN trip_board b
-			ON t.boardId = b.id
-			INNER JOIN member m
-			ON t. memberId = m.id
-			GROUP BY t.id	
-			ORDER BY t.id DESC
-			LIMIT #{limitStart}, #{itemsInApage}
+			<script>
+				SELECT t.id
+				, DATE_FORMAT(t.regDate, "%Y-%m-%d") AS regDate
+				, DATE_FORMAT(t.updateDate, "%Y-%m-%d") AS updateDate
+				, t.memberId
+				, t.boardId
+				, t.province_city AS provinceCity
+				, t.place_name AS placeName
+				, t.price
+				, t.`body`
+				, b.name AS boardName
+				, m.nickname AS nickname
+				FROM trip t
+				INNER JOIN trip_board b
+				ON t.boardId = b.id
+				INNER JOIN member m
+				ON t. memberId = m.id
+				WHERE 1=1
+				<if test="boardId != 0">
+					AND t.boardId = #{boardId}
+				</if>
+				GROUP BY t.id	
+				ORDER BY t.id DESC
+				LIMIT #{limitStart}, #{itemsInApage}
+			</script>
 			""")
-	List<Trip> getTrips(int limitStart, int itemsInApage);
+	List<Trip> getTrips(int limitStart, int itemsInApage, int boardId);
 
 	@Insert("""
 	        INSERT INTO trip
@@ -97,7 +103,6 @@ public interface TripDao {
 	            WHERE id = #{id}
 	        """)
 	void modifyTrip(int id, String provinceCity, String placeName, int price, String description);
-	
 
 
 }
