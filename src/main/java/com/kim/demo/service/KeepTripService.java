@@ -29,8 +29,8 @@ public class KeepTripService {
 		
 	}
 
-	public static List<Integer> memberberKeepTrips(int loginedMemberId) {
-		return keepTripDao.memberberKeepTrips(loginedMemberId);
+	public static List<Integer> memberKeepTrips(int loginedMemberId) {
+		return keepTripDao.memberKeepTrips(loginedMemberId);
 	}
 
 	public static void doKeepTripDelete(List<Integer> duplicated, int loginedMemberId) {

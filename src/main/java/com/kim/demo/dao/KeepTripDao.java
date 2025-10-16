@@ -63,7 +63,7 @@ public interface KeepTripDao {
 			FROM keep_trip
 			WHERE memberId = #{loginedMemberId}
 			""")
-	List<Integer> memberberKeepTrips(int loginedMemberId);
+	List<Integer> memberKeepTrips(int loginedMemberId);
 
 	@Delete("""
 			<script>

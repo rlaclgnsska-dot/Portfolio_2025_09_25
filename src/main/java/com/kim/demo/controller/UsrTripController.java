@@ -93,7 +93,7 @@ public class UsrTripController {
 
 	@RequestMapping("/usr/trip/doWrite")
 	@ResponseBody
-	public String doWrite(int boardId, String tripStartTime, String tripEndTime, String province, String city, String placeName,
+	public String doWrite(int boardId, String province, String city, String placeName,
 			int price, String body) {
 
 		if (rq.getLoginedMemberId() == 0) {
@@ -116,9 +116,7 @@ public class UsrTripController {
 //		tripStartTime = Util.convertDateTimeFormat(tripStartTime);
 //		tripEndTime = Util.convertDateTimeFormat(tripEndTime);
 		
-		String provinceCity = (province + city).replaceAll(",", "_");
-
-		tripService.writeTrip(boardId, provinceCity, placeName, price, body, (int) rq.getLoginedMemberId());
+		tripService.writeTrip(boardId, province, city, placeName, price, body, (int) rq.getLoginedMemberId());
 		
 		int tripId = tripService.getLastInsertId();
 		
@@ -165,9 +163,9 @@ public class UsrTripController {
 
 	@RequestMapping("/usr/trip/doModify")
 	@ResponseBody
-	public String doModify(int id, String provinceCity, String placeName, int price, String description) {
+	public String doModify(int id, String province, String city, String placeName, int price, String description) {
 
-		tripService.modifyTrip(id, provinceCity, placeName, price, description);
+		tripService.modifyTrip(id, province, city, placeName, price, description);
 
 		return Util.jsReplace(Util.f("%d번 게시물을 수정했습니다", id), Util.f("detail?id=%d", id));
 	}
@@ -182,7 +180,7 @@ public class UsrTripController {
 	    
 	    int loginedMemberId = rq.getLoginedMemberId();
 	    
-	    List<Integer> memberKeepTrips = KeepTripService.memberberKeepTrips(loginedMemberId);
+	    List<Integer> memberKeepTrips = KeepTripService.memberKeepTrips(loginedMemberId);
 	    
 	    Set<Integer>  keepSet = new HashSet<>(memberKeepTrips);
 	    

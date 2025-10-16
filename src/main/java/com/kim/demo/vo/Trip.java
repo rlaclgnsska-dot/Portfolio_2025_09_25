@@ -13,9 +13,8 @@ public class Trip {
 	private String updateDate;
 	private int memberId;
 	private int boardId;
-	private int trip_start_time;
-	private int trip_end_time;
-	private String provinceCity;
+	private String province;
+	private String city;
 	private String placeName;
 	private int price;
 	private String body;
