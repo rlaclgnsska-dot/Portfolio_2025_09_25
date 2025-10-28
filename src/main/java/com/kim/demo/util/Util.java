@@ -1,14 +1,10 @@
 package com.kim.demo.util;
 
-import java.io.File;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.UUID;
-
-import org.springframework.web.multipart.MultipartFile;
 
 public class Util {
+	
 	public static boolean empty(String str) {
 		
 		if (str == null) {
