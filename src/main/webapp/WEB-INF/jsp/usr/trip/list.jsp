@@ -41,7 +41,7 @@
 	                    <tr>
 	                        <th>번호</th>
 	                        <th>종류</th>
-	                        <th>도시</th>
+	                        <th>지역</th>
 	                        <th>상호명</th>
 	                        <th>가격</th>
 	                        <th>작성자</th>
@@ -53,7 +53,7 @@
 	                        <tr>
 	                            <td>${trip.id}</td>
 	                            <td>${trip.boardName}</td>
-	                            <td>${trip.provinceCity}</td>
+	                            <td>${trip.province} ${trip.city}</td>
 	                            <td class="hover:underline">
 	                                <a href="detail?id=${trip.id}">${trip.placeName}</a>
 	                            </td>

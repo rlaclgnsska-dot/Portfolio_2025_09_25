@@ -4,15 +4,13 @@
 
 	<c:set var="pageTitle" value="ARTICLE DITAIL" />
 	
+	<link rel="stylesheet" href="/resource/trip/detail.css" />
+	
 	<%@ include file="../common/head.jsp" %>
 	
-	<script>
-	
-
-	</script>	
 	
 	<section class="mt-8 text-xl">
-		<div class="container mx-auto px-3">
+		<div class="detail-container">
 			<div class="table-box-type">
 				<table>
 					<tr>
@@ -36,8 +34,8 @@
 						<td>${trip.boardName }</td>
 					</tr>
 					<tr>
-						<th>도시</th>
-						<td>${trip.provinceCity }</td>
+						<th>지역</th>
+						<td>${trip.province } ${trip.city }</td>
 					</tr>
 					<tr>
 						<th>상호명</th>
@@ -52,6 +50,10 @@
 						<td>${trip.body }</td>
 					</tr>
 				</table>
+			</div>
+			
+			<div class="like-btn">
+			
 			</div>
 			
 			<div class="btus">

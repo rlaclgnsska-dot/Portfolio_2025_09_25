@@ -66,7 +66,7 @@ public class UsrMemberController {
 		
 		int id = memberService.getLastInsertId();
 		
-		return ResultData.from("F-1", "가입 완료", memberService.getMemberById(id));
+		return ResultData.from("S-1", "가입 완료", memberService.getMemberById(id));
 	}
 	
 	@RequestMapping("/usr/member/login")

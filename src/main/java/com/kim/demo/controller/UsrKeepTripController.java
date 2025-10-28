@@ -85,7 +85,7 @@ public class UsrKeepTripController {
 		
 	    int loginedMemberId = rq.getLoginedMemberId();
 	    
-	    List<Integer> memberKeepTrips = KeepTripService.memberberKeepTrips(loginedMemberId);
+	    List<Integer> memberKeepTrips = KeepTripService.memberKeepTrips(loginedMemberId);
 	    
 	    Set<Integer>  keepSet = new HashSet<>(memberKeepTrips);
 	    
