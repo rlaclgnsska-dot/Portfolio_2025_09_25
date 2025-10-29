@@ -35,6 +35,21 @@ CREATE TABLE board(
     `name` VARCHAR(20) NOT NULL COMMENT '게시판 이름'
 );
 
+CREATE TABLE project(
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    regDate DATETIME NOT NULL,
+    updateDate DATETIME NOT NULL,
+    memberId INT UNSIGNED NOT NULL,
+    title VARCHAR(200) NOT NULL,
+    `body` TEXT NOT NULL,
+    techStack VARCHAR(500) COMMENT '사용 기술 스택',
+    githubUrl VARCHAR(200) COMMENT 'GitHub 저장소 URL',
+    demoUrl VARCHAR(200) COMMENT '데모 사이트 URL',
+    startDate DATE COMMENT '프로젝트 시작일',
+    endDate DATE COMMENT '프로젝트 종료일',
+    `status` VARCHAR(20) DEFAULT 'completed' COMMENT '프로젝트 상태 (ongoing, completed, planned)'
+);
+
 INSERT INTO article
 SET regDate = NOW(),
 updateDate = NOW(),
@@ -92,6 +107,30 @@ SET regDate = NOW(),
 updateDate = NOW(),
 `code` = 'free',
 `name` = '자유';
+
+INSERT INTO project
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 1,
+title = '포트폴리오 웹사이트',
+`body` = 'Spring Boot와 MyBatis를 사용한 포트폴리오 웹사이트입니다. 게시판, 회원 관리, 여행 정보 관리 등의 기능을 제공합니다.',
+techStack = 'Spring Boot, MyBatis, MySQL, JSP, Tailwind CSS',
+githubUrl = 'https://github.com/example/portfolio',
+startDate = '2025-09-01',
+endDate = '2025-10-29',
+`status` = 'completed';
+
+INSERT INTO project
+SET regDate = NOW(),
+updateDate = NOW(),
+memberId = 1,
+title = '여행 정보 공유 플랫폼',
+`body` = '사용자들이 여행 정보를 공유하고 찜할 수 있는 플랫폼입니다.',
+techStack = 'Spring Boot, REST API, MySQL',
+githubUrl = 'https://github.com/example/travel',
+demoUrl = 'https://travel-demo.com',
+startDate = '2025-08-01',
+`status` = 'ongoing';
 
 SELECT * FROM article;
 SELECT * FROM `member`;
