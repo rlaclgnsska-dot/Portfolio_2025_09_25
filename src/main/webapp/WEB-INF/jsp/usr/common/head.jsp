@@ -23,6 +23,7 @@
 		<ul class="flex">
 			<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/article/list?boardId=1"><span>공지</span></a></li>
 			<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/article/list?boardId=2"><span>게시물</span></a></li>
+			<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/project/list"><span>프로젝트</span></a></li>
 			<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/trip/list"><span>여행</span></a></li>
 			<c:if test="${rq.getLoginedMemberId() == 0 }">
 				<li class="hover:underline"><a class="h-full px-3 flex items-center" href="/usr/member/login"><span>로그인</span></a></li>
